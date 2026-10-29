@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1b5e20" />
+  <title>Smart Plant Guardian</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="topbar">
+      <div>
+        <h1>Smart Plant Guardian</h1>
+        <p id="connection">Connecting...</p>
+      </div>
+      <button id="installBtn" class="btn secondary" hidden>Install App</button>
+    </header>
+
+    <section class="grid">
+      <div class="card stat">
+        <h2>Soil Moisture</h2>
+        <p id="soil">--%</p>
+      </div>
+      <div class="card stat">
+        <h2>Water Raw</h2>
+        <p id="waterRaw">--</p>
+      </div>
+      <div class="card stat">
+        <h2>Pump</h2>
+        <p id="pumpState">--</p>
+      </div>
+      <div class="card stat">
+        <h2>Mode</h2>
+        <p id="mode">--</p>
+      </div>
+    </section>
+
+    <section class="card full">
+      <h2>Device Status</h2>
+      <div class="status-grid">
+        <div><span>Runtime</span><strong id="runtime">--</strong></div>
+        <div><span>IP Address</span><strong id="ipAddress">--</strong></div>
+        <div><span>Firmware</span><strong id="firmware">--</strong></div>
+        <div><span>Last Seen</span><strong id="lastSeen">--</strong></div>
+      </div>
+    </section>
+
+    <section class="card full">
+      <h2>Controls</h2>
+      <div class="controls">
+        <button id="powerBtn" class="btn">Toggle Power</button>
+        <button id="pumpBtn" class="btn">Toggle Pump</button>
+        <button id="autoBtn" class="btn">AUTO</button>
+        <button id="manualBtn" class="btn secondary">MANUAL</button>
+      </div>
+      <p id="controlMsg"></p>
+    </section>
+
+    <section class="card full">
+      <h2>Settings</h2>
+      <form id="settingsForm" class="settings">
+        <label>
+          Soil Dry %
+          <input type="number" id="soilDryPercent" min="0" max="100" step="1" />
+        </label>
+        <label>
+          Soil Target %
+          <input type="number" id="soilTargetPercent" min="0" max="100" step="1" />
+        </label>
+        <label>
+          Max Pump Run Time (min)
+          <input type="number" id="maxPumpRunTimeMinutes" min="1" max="120" step="1" />
+        </label>
+        <button type="submit" class="btn">Save Settings</button>
+      </form>
+    </section>
+
+    <section class="card full">
+      <h2>History</h2>
+      <canvas id="chart" width="800" height="260"></canvas>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

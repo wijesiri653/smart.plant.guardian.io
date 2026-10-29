@@ -1,0 +1,105 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #f4f7f5;
+  color: #1b1b1b;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px;
+}
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+h1 {
+  margin: 0;
+  color: #1b5e20;
+}
+#connection {
+  margin: 6px 0 0;
+  color: #555;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+.stat p {
+  font-size: 1.8rem;
+  margin: 10px 0 0;
+  font-weight: 700;
+}
+.full { margin-top: 16px; }
+.controls, .settings {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 600;
+}
+input {
+  padding: 12px;
+  border: 1px solid #cfd8dc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #1b5e20;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn.secondary {
+  background: #607d8b;
+}
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+.status-grid div {
+  background: #f7faf7;
+  border-radius: 12px;
+  padding: 12px;
+}
+.status-grid span {
+  display: block;
+  color: #666;
+  font-size: .9rem;
+}
+.status-grid strong {
+  display: block;
+  margin-top: 6px;
+  font-size: 1.05rem;
+}
+#controlMsg {
+  margin-top: 12px;
+  color: #1b5e20;
+  font-weight: 600;
+}
+canvas {
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 12px;
+  background: #fff;
+}
